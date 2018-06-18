@@ -253,3 +253,35 @@ first_3 = inventory[:3]
 twin_beds = inventory.count("twin bed")
 
 inventory.sort()
+
+
+#  ADDITIONAL PRACTICE
+
+toppings = ["pepperoni", "pineapple", "cheese", "sausage", "olives", "anchovies", "mushrooms"]
+
+prices = [2, 6, 1, 3, 2, 7, 2]
+
+num_pizza = len(toppings)
+
+print("We sell " + str(num_pizza) + " different kinds of pizza!")
+
+pizzas = list(zip(prices, toppings))
+#needed to cast it to a list()
+
+pizzas.sort()
+
+sorted(pizzas)
+
+print(pizzas)
+# [(1, 'cheese'), (2, 'mushrooms'), (2, 'olives'), (2, 'pepperoni'),
+# (3, 'sausage'), (6, 'pineapple'), (7, 'anchovies')]
+
+
+cheapest_pizza = pizzas[0]
+
+priciest_pizza = pizzas[-1]
+
+three_cheapest = pizzas[:3]
+
+print(three_cheapest)
+# [(1, 'cheese'), (2, 'mushrooms'), (2, 'olives')]
