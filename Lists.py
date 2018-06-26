@@ -285,3 +285,123 @@ three_cheapest = pizzas[:3]
 
 print(three_cheapest)
 # [(1, 'cheese'), (2, 'mushrooms'), (2, 'olives')]
+
+
+#Write your function here
+
+def double_index(lst, index):
+  if len(lst) > index:
+    lst[index] *= 2
+    return lst
+  else:
+    return lst
+
+
+#Uncomment the line below when your function is done
+print(double_index([3, 8, -10, 12], 2))
+#prints [3, 8, -20, 12]
+
+# given a list, remove all indidces between
+# start and end
+
+def remove_middle(lst, start, end):
+  first_half = lst[:start]
+  second_half = lst[end + 1:]
+  combination = first_half + second_half
+  return combination
+
+print(remove_middle([4, 8, 15, 16, 23, 42], 1, 3))
+# [4, 23, 42]
+
+
+# given a list, see if "item" appears more than "n" times
+def more_than_n(lst, item, n):
+  num_appearances = lst.count(item)
+  if num_appearances > n:
+    return True
+  else:
+    return False
+
+
+print(more_than_n([2, 4, 6, 2, 3, 2, 1, 2], 2, 3))
+# True
+
+# given a list, return which item appears more frequently
+def more_frequent_item(lst, item1, item2):
+  count_item1 = lst.count(item1)
+  count_item2 = lst.count(item2)
+
+  if count_item1 >= count_item2:
+    return item1
+  else:
+    return item2
+
+print(more_frequent_item([2, 3, 3, 2, 3, 2, 3, 2, 3], 2, 3))
+# 3
+
+# given a list, return the middle element
+# if the list is even, return average of the two middle elements
+
+def middle_element(lst):
+  list_length = len(lst)
+  if list_length % 2 == 0:
+    middle = int(list_length / 2)
+    average_of_middles = (lst[middle - 1] + lst[middle]) / 2
+    return average_of_middles
+  else:
+    return lst[int(list_length/2)]
+
+print(middle_element([5, 2, -10, -4, 4, 5]))
+# -7.0
+
+print(middle_element([1, 2, 3]))
+# 2
+
+
+# given a list, take the last two elements, add them together and append that.
+# do this a total of three times
+
+def append_sum(lst):
+  lst.append(lst[-1] + lst[-2])
+  lst.append(lst[-1] + lst[-2])
+  lst.append(lst[-1] + lst[-2])
+  #this would be better with a for loop
+  return lst
+
+#Uncomment the line below when your function is done
+print(append_sum([1, 1, 2]))
+
+
+# given 2 lists, compare their length
+# if lst1 >= lst 2, return last index of lst1
+# else return last index of lst2
+
+def larger_list(lst1, lst2):
+  len_list1 = len(lst1)
+  len_list2 = len(lst2)
+  if len_list1 >= len_list2:
+    return lst1[-1]
+  else:
+    return lst2[-1]
+
+#print(larger_list([4, 10, 2, 5], [-10, 2, 5, 10]))
+# 5
+
+
+# given 2 lists, combine them and sort
+def combine_sort(lst1, lst2):
+  combo_lists = lst1 + lst2
+  return sorted(combo_lists)
+
+# print(combine_sort([4, 10, 2, 5], [-10, 2, 5, 10]))
+# [-10, 2, 2, 4, 5, 5, 10, 10]
+
+
+#Write your function here
+def append_size(lst):
+  to_append = list(range(1, len(lst)+1))
+  lst = lst + to_append
+  return lst
+
+#Uncomment the line below when your function is done
+print(append_size([23, 42, 108]))
