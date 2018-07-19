@@ -84,3 +84,59 @@ print(squares)
 cubes = [digit**3 for digit in single_digits]
 
 print(cubes)
+
+
+# prints the last 3 letters of each name concatenated to a string
+first_name = "Reiko"
+last_name = "Matsuki"
+
+def password_generator(first, last):
+  first_str = first[len(first) - 3:]
+  last_str = last[len(last) - 3: ]
+  return first_str + last_str
+
+print(password_generator(first_name, last_name))
+# ikouki
+
+
+# we can do the same thing with negative indexes
+company_motto = "Copeland's Corporate Company helps you capably cope with the constant cacophony of daily life"
+
+second_to_last = company_motto[-2]
+
+final_word = company_motto[-4:]
+
+
+first_name = "Bob"
+last_name = "Daily"
+
+# this won't work, strings are immutable
+# first_name[0] = "R"
+
+# have to do this :/
+fixed_first_name = "R" + first_name[1:]
+
+
+# don't forget to escape special characters!
+password = "theycallme\"crazy\"91"
+
+
+# writing our own length function :)
+
+def get_length(string):
+  count = 0
+  for letter in string:
+    # python doesn't have this:
+    # count++
+    count += 1
+  return count
+
+
+  # finding a letter in a word
+  def letter_check(word, letter):
+  for character in word:
+    if character == letter:
+      return True
+  return False
+
+  
